@@ -7,9 +7,10 @@ layout: homepage
 </div>
 
 <div class="section-box">
-  {% include_relative _includes/publications.md %}
+  {% include_relative _includes/news.md %}
 </div>
 
 <div class="section-box">
-  {% include_relative _includes/news.md %}
+  {% include_relative _includes/publications.md %}
 </div>
+
