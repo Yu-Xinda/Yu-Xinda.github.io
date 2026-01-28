@@ -14,3 +14,7 @@ layout: homepage
   {% include_relative _includes/publications.md %}
 </div>
 
+<div class="section-box">
+  {% include_relative _includes/service.md %}
+</div>
+
