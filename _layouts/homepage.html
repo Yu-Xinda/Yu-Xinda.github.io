@@ -1,296 +1,179 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{ site.title }}'s homepage</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ site.title }}'s homepage</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
 
-    {% if site.keywords %}
-    <meta name="keywords" content="{{ site.keywords }}">
-    {% endif %}
-    {% if site.canonical %}
-    <link rel="canonical" href="{{ site.canonical }}"/>
-    {% endif %}
+    {% if site.keywords %}
+    <meta name="keywords" content="{{ site.keywords }}">
+    {% endif %}
+    {% if site.canonical %}
+    <link rel="canonical" href="{{ site.canonical }}"/>
+    {% endif %}
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
+    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    {% if site.font == "Sans Serif" %}
-    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
-    {% else %}
-    <link rel="stylesheet" href="./assets/css/font.css">
-    {% endif %}
-    
-    {% if site.auto_dark_mode %}
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
-    {% else %}
-    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
-    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
-    {% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    {% if site.font == "Sans Serif" %}
+    <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/font.css">
+    {% endif %}
+    {% if site.auto_dark_mode %}
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/publications.css">
+    {% else %}
+    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
+    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
+    {% endif %}
 
-    <style>
-      /* --- 基础设置 --- */
-      body {
-        background-color: white;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      }
+    <style>
+      body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      }
 
-      /* 页面主容器 */
-      .page-container {
-        display: flex;
-        justify-content: center;
-        padding: 40px 20px; /* 页面四周留白 */
-        min-height: 100vh;
-        box-sizing: border-box;
-      }
+      .page-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        background-color: white;
+        min-height: 100vh;
+      }
+/*    修改背景样式 */
+      .wrapper {
+        max-width: 960px;
+        width: 100%;
+/*         用图片当背景 */
+        /* background: url('{{ site.background.site }}') repeat; */
+/*         用纯色当背景 */
+        background-color:	#e6f0ff; 
+        padding: 40px;
+        margin: 40px 0;
+        border-radius: 10px;
+/*         background-size:1000px 1000px */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-repeat: no-repeat; /* 防止重复 */
+        background-size: 1200px 1000px;/*根据内容和图片手动调整背景大小，前宽后高*/
+        background-position: center;  /* 居中 */
+      }
 
-      /* 左右布局网格 */
-      .layout-grid {
-        display: flex;
-        flex-direction: row;
-        gap: 30px; /* 左右两栏的间距 */
-        max-width: 1200px;
-        width: 100%;
-        align-items: flex-start; /* 顶部对齐 */
-      }
+      .social-icons a {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px;
+      }
 
-      /* =========================================
-         左侧侧边栏 (新样式：Pei Zhang 风格)
-         ========================================= */
-      .sidebar {
-        flex: 0 0 280px; /* 固定宽度 */
-        text-align: center;
-        /* 如果左侧也想要个白底卡片效果，保留下面几行；如果想要透明，去掉 background 和 shadow */
-        background: #fff; 
-        padding: 30px 20px;
-        /* 也可以加上一点圆角和阴影让它跟右边协调，或者保持简洁 */
-      }
+      .social-icons i {
+        margin-right: 5px;
+      }
 
-      /* 头像 */
-      .avatar img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%; /* 圆形 */
-        object-fit: cover;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
+      .social-icons p {
+        display: inline-block;
+        vertical-align: middle;
+      }
+/*       更改个人简介的图标样式 */
+      .profile-icon {
+        color: #000;
+        font-size: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+/*       更改个人简介文字样式 */
+      .profile-text-exp {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+        color: #333;
+        line-height: 1.6;
+        text-align: left;
+      }
+      .profile-text {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-      /* 名字 */
-      .profile-name {
-        font-size: 1.8em;
-        font-weight: 700;
-        color: #333;
-        margin: 10px 0 5px 0;
-      }
+  <body>
+    <div class="page-container">
+      <div class="wrapper">
+        <header>
+          {% if site.avatar %}
+          <a class="image avatar">
+            <img src="{{ site.avatar }}" alt="avatar" />
+          </a>
+          {% endif %}
+          <!-- 以下文字居中 -->
+          <h1>{{ site.title }}</h1>
+      
+          {% if site.state %}
+          <p class="profile-text">{{ site.state }}</p>
+          {% endif %}
+      
+          {% if site.email %}
+          <p class="profile-text">{{ site.email }}</p>
+          {% endif %}
+      
+          {% if site.university %}
+          <p class="profile-text">{{ site.university }}</p>
+          {% endif %}
+          
+<!--           {% if site.location %}
+          <p class="profile-text">
+            &emsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;{{ site.location }}
+          </p>
+          {% endif %} -->
+          <!-- experience 不居中 -->
+          {% if site.experience %}
+            {% assign index = 0 %}
+            {% for item in site.experience %}
+              {% assign mod = index | modulo: 2 %}
+              {% if mod == 0 %}
+              <p class="profile-text-exp"">{{ item }}</p>
+              {% else %}
+              <p class="profile-text-exp"">&emsp;&emsp;{{ item }}</p>
+              {% endif %}
+              {% assign index = index | plus: 1 %}
+            {% endfor %}
+          {% endif %}
 
-      /* 状态 */
-      .profile-state {
-        color: #666;
-        font-size: 1em;
-        margin-bottom: 25px;
-      }
+          <br>
+        </header>
 
-      /* 联系列表容器 (实现居中但左对齐) */
-      .contact-list {
-        display: inline-block;
-        text-align: left;
-      }
+        <section>
+          {{ content }}
+          <br>
+          {% if site.enable_footnote %}
+          <p></p>
+          {% endif %}
+        </section>
 
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-        font-size: 15px;
-        color: #444;
-      }
-      
-      .contact-item a {
-        color: #444;
-        text-decoration: none;
-      }
-      .contact-item a:hover {
-        color: #007bff;
-      }
+        <footer>
+        </footer>
+      </div>
+    </div>
 
-      .contact-item i {
-        width: 25px;
-        text-align: center;
-        margin-right: 10px;
-        color: #555;
-      }
-      
-      /* 左侧经历简表 (可选) */
-      .sidebar-experience {
-        margin-top: 20px;
-        text-align: left;
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-        font-size: 0.9em;
-        color: #666;
-      }
-
-
-      /* =========================================
-         右侧主内容区 (保留原本的样式效果)
-         ========================================= */
-      .main-content-wrapper {
-        flex: 1; /* 占据剩余宽度 */
-        
-        /* --- 这里还原您原来的 .wrapper 样式 --- */
-        background-color: #e6f0ff; /* 原来的淡蓝色背景 */
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* 原来的阴影 */
-        
-        /* 背景图逻辑 (保留 liquid 语法) */
-        background-repeat: no-repeat;
-        background-size: 1200px 1000px; /* 您原来的设置 */
-        background-position: center;
-        /* 如果 config 里有图片，应用图片背景 */
-        /* background-image: url('{{ site.background.site }}'); */
-      }
-      
-      /* 确保右侧内容里的图片自适应 */
-      .main-content-wrapper img {
-        max-width: 100%;
-      }
-
-      /* --- 响应式 (手机端变为上下排列) --- */
-      @media (max-width: 850px) {
-        .layout-grid {
-          flex-direction: column;
-        }
-        .sidebar {
-          width: 100%;
-          flex: none;
-          padding: 20px 0;
-        }
-        .main-content-wrapper {
-            width: 100%;
-            padding: 20px; /* 手机上 padding 小一点 */
-            box-sizing: border-box;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="page-container">
-      <div class="layout-grid">
-        
-        <aside class="sidebar">
-          {% if site.avatar %}
-          <div class="avatar">
-            <img src="{{ site.avatar }}" alt="avatar" />
-          </div>
-          {% endif %}
-
-          <div class="profile-name">{{ site.title }}</div>
-
-          {% if site.state %}
-          <div class="profile-state">{{ site.state }}</div>
-          {% endif %}
-
-          <div class="contact-list">
-            
-            {% if site.location %}
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>{{ site.location }}</span>
-            </div>
-            {% endif %}
-            
-            {% if site.email %}
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-            </div>
-            {% endif %}
-
-            {% if site.university %}
-            <div class="contact-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>{{ site.university }}</span>
-            </div>
-            {% endif %}
-
-            {% if site.researchgate %}
-            <div class="contact-item">
-              <i class="ai ai-researchgate"></i>
-              <a href="{{ site.researchgate }}">ResearchGate</a>
-            </div>
-            {% endif %}
-
-            {% if site.github_username %}
-            <div class="contact-item">
-              <i class="fab fa-github"></i>
-              <a href="https://github.com/{{ site.github_username }}">Github</a>
-            </div>
-            {% endif %}
-
-            {% if site.google_scholar %}
-            <div class="contact-item">
-              <i class="ai ai-google-scholar"></i>
-              <a href="{{ site.google_scholar }}">Google Scholar</a>
-            </div>
-            {% endif %}
-
-            {% if site.orcid %}
-            <div class="contact-item">
-              <i class="ai ai-orcid"></i>
-              <a href="{{ site.orcid }}">ORCID</a>
-            </div>
-            {% endif %}
-          </div>
-          
-          {% if site.experience %}
-          <div class="sidebar-experience">
-             {% for item in site.experience %}
-               <div style="margin-bottom:5px;">{{ item }}</div>
-             {% endfor %}
-          </div>
-          {% endif %}
-        </aside>
-
-        <main class="main-content-wrapper" 
-              style="{% if site.background.site %}background-image: url('{{ site.background.site }}');{% endif %}">
-          
-          <section>
-             {{ content }}
-          </section>
-
-          {% if site.enable_footnote %}
-          <br><br>
-          <div style="font-size: small; color: #666; border-top: 1px solid #ccc; padding-top:10px;">
-             Last updated: {{ site.time | date: '%Y-%m-%d' }}
-          </div>
-          {% endif %}
-
-        </main>
-
-      </div>
-    </div>
-
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    {% if site.google_analytics %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
-  </body>
-</html>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+  </body>
+</html>这是我现在主页的html代码，呈现效果如图，接下来我会给你发新的效果图
