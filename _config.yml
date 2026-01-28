@@ -14,7 +14,7 @@ avatar: ./assets/img/avatar.png  #个人头像图片
 favicon: ./assets/img/favicon.png  #打开标题页图标
 background:    
 #用于设置homepage的背景图和About me的背景图（需要手动调节图片大小以适配内容），也可以使用纯色背景（无需调节）。如果是纯色背景需要去_layout中的homepage中调整
-  site:
+  site: ./assets/img/pexels-samiro-2102367.jpg
 
 # 自动深夜模式
 auto_dark_mode: true
