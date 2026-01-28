@@ -1,20 +1,16 @@
-# Basic Information 
-title: Yu Xinda  #姓名
-state: Master student #当前状态
-university:   Huzhou University #所在大学
-experience:  #个人经历设置，请根据以下格式“一行时间一行经历”来写
-  - 2025 - Now：
-  - B.Sc. Huzhou University 
-  - 2020 - 2024：
-  - B.E. ZhejiangWanli University
-email: yuxindaaaa@gmail.com
+# 现有的配置
+title: Yu Xinda
+state: Master student
+email: yuxindaaaaa@gmail.com
+university: Huzhou University
+avatar: ./assets/img/your-photo.jpg # 确保路径正确
 
-# 图标背景设置
-avatar: ./assets/img/avatar.png  #个人头像图片
-favicon: ./assets/img/favicon.png  #打开标题页图标
-background:    
-#用于设置homepage的背景图和About me的背景图（需要手动调节图片大小以适配内容），也可以使用纯色背景（无需调节）。如果是纯色背景需要去_layout中的homepage中调整
-  site: ./assets/img/pexels-samiro-2102367.jpg
+# --- 新增以下字段以启用带图标的链接 ---
+location: Zhejiang, China  # 如果需要显示地点
+github_username: yourusername  # 仅填写用户名
+google_scholar: https://scholar.google.com/citations?user=XXXX  # 完整链接
+researchgate: https://www.researchgate.net/profile/Your-Name # 完整链接
+orcid: https://orcid.org/0000-xxxx-xxxx-xxxx # 完整链接
 
 # 自动深夜模式
 auto_dark_mode: true
