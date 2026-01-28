@@ -82,7 +82,7 @@
       }
 /*       更改个人简介的图标样式 */
       .profile-icon {
-        color: #000;
+        color: #555;
         font-size: 16px;
         margin-right: 8px;
         vertical-align: middle;
@@ -102,6 +102,31 @@
         line-height: 1.6;
         text-align: center;
       }
+      
+      /* 新增：个人信息链接样式 */
+      .profile-link {
+        display: block;
+        margin: 12px 0;
+        text-align: left;
+        color: #555;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s;
+      }
+      
+      .profile-link:hover {
+        color: #0366d6;
+      }
+      
+      .profile-link i {
+        width: 20px;
+        margin-right: 10px;
+        color: #555;
+      }
+      
+      .profile-link-text {
+        vertical-align: middle;
+      }
     </style>
   </head>
 
@@ -114,35 +139,66 @@
             <img src="{{ site.avatar }}" alt="avatar" />
           </a>
           {% endif %}
-          <!-- 以下文字居中 -->
+          <!-- 姓名居中 -->
           <h1>{{ site.title }}</h1>
       
-          {% if site.state %}
-          <p class="profile-text">{{ site.state }}</p>
-          {% endif %}
-      
-          {% if site.email %}
-          <p class="profile-text">{{ site.email }}</p>
-          {% endif %}
-      
-          {% if site.university %}
-          <p class="profile-text">{{ site.university }}</p>
+          <!-- 地点信息（带图标，左对齐） -->
+          {% if site.location %}
+          <div class="profile-link">
+            <i class="fas fa-map-marker-alt profile-icon"></i>
+            <span class="profile-link-text">{{ site.location }}</span>
+          </div>
           {% endif %}
           
-<!--           {% if site.location %}
-          <p class="profile-text">
-            &emsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;{{ site.location }}
-          </p>
-          {% endif %} -->
+          <!-- Email链接（带图标，左对齐） -->
+          {% if site.email %}
+          <a href="mailto:{{ site.email }}" class="profile-link">
+            <i class="fas fa-envelope profile-icon"></i>
+            <span class="profile-link-text">Email</span>
+          </a>
+          {% endif %}
+          
+          <!-- ResearchGate链接 -->
+          {% if site.researchgate %}
+          <a href="{{ site.researchgate }}" target="_blank" class="profile-link">
+            <i class="ai ai-researchgate profile-icon"></i>
+            <span class="profile-link-text">ResearchGate</span>
+          </a>
+          {% endif %}
+          
+          <!-- GitHub链接 -->
+          {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" class="profile-link">
+            <i class="fab fa-github profile-icon"></i>
+            <span class="profile-link-text">Github</span>
+          </a>
+          {% endif %}
+          
+          <!-- Google Scholar链接 -->
+          {% if site.google_scholar %}
+          <a href="{{ site.google_scholar }}" target="_blank" class="profile-link">
+            <i class="ai ai-google-scholar profile-icon"></i>
+            <span class="profile-link-text">Google Scholar</span>
+          </a>
+          {% endif %}
+          
+          <!-- ORCID链接 -->
+          {% if site.orcid %}
+          <a href="{{ site.orcid }}" target="_blank" class="profile-link">
+            <i class="ai ai-orcid profile-icon"></i>
+            <span class="profile-link-text">ORCID</span>
+          </a>
+          {% endif %}
+          
           <!-- experience 不居中 -->
           {% if site.experience %}
             {% assign index = 0 %}
             {% for item in site.experience %}
               {% assign mod = index | modulo: 2 %}
               {% if mod == 0 %}
-              <p class="profile-text-exp"">{{ item }}</p>
+              <p class="profile-text-exp">{{ item }}</p>
               {% else %}
-              <p class="profile-text-exp"">&emsp;&emsp;{{ item }}</p>
+              <p class="profile-text-exp">&emsp;&emsp;{{ item }}</p>
               {% endif %}
               {% assign index = index | plus: 1 %}
             {% endfor %}
