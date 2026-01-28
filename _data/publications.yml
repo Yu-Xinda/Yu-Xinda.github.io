@@ -1,6 +1,7 @@
 main:
 
   - title: "Deep Learning for Image Super-Resolution"
+    venue: "CVPR"
     image: ./image/teaser_example.png
     authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan L. Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou⋆
     conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
@@ -31,6 +32,7 @@ main:
     code: https://github.com/MrGiovanni/ContinualLearning
 
   - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
+    venue: "CVPR"
     image: ./image/teaser_example_2.png 
     authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
     conference_short: CVPR
