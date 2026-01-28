@@ -26,81 +26,143 @@
     {% else %}
     <link rel="stylesheet" href="./assets/css/font.css">
     {% endif %}
-    {% if site.auto_dark_mode %}
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
-    {% else %}
-    <link rel="stylesheet" href="./assets/css/style-no-dark-mode.css">
-    <link rel="stylesheet" href="./assets/css/publications-no-dark-mode.css">
-    {% endif %}
-
+    
     <style>
+      /* 全局设置 */
       body {
-        background-color: white;
+        background-color: #f9f9f9; /* 页面背景色，稍微带点灰让卡片更突出 */
         margin: 0;
         padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #333;
+        line-height: 1.6;
       }
 
+      /* 页面容器 */
       .page-container {
         display: flex;
         justify-content: center;
-        align-items: stretch;
-        background-color: white;
         min-height: 100vh;
+        padding: 40px 20px;
       }
-/*    修改背景样式 */
+
+      /* 内容卡片 */
       .wrapper {
-        max-width: 960px;
+        max-width: 900px;
         width: 100%;
-/*         用图片当背景 */
-        /* background: url('{{ site.background.site }}') repeat; */
-/*         用纯色当背景 */
-        background-color:	#e6f0ff; 
-        padding: 40px;
-        margin: 40px 0;
-        border-radius: 10px;
-/*         background-size:1000px 1000px */
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        background-repeat: no-repeat; /* 防止重复 */
-        background-size: 1200px 1000px;/*根据内容和图片手动调整背景大小，前宽后高*/
-        background-position: center;  /* 居中 */
+        background-color: #ffffff; /* 卡片背景纯白 */
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 柔和的阴影 */
+        
+        /* 如果您需要在 _config.yml 里设置背景图，取消下面注释即可 */
+        /* background: url('{{ site.background.site }}') no-repeat center top; */
+        /* background-size: cover; */
       }
 
-      .social-icons a {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 5px;
+      /* --- 头部样式 (Header) --- */
+      header {
+        text-align: center; /* 让头像和名字默认居中 */
+        margin-bottom: 40px;
       }
 
-      .social-icons i {
-        margin-right: 5px;
+      /* 头像 */
+      .avatar-container {
+        margin-bottom: 20px;
+      }
+      .avatar-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%; /* 圆形 */
+        object-fit: cover;  /* 防止图片变形 */
+        border: 4px solid #fff; /* 头像白边 */
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
       }
 
-      .social-icons p {
-        display: inline-block;
-        vertical-align: middle;
+      /* 名字 */
+      h1.name {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 10px 0 5px 0;
+        color: #222;
       }
-/*       更改个人简介的图标样式 */
-      .profile-icon {
-        color: #000;
-        font-size: 16px;
-        margin-right: 8px;
-        vertical-align: middle;
+
+      /* 状态 (Master student) */
+      .status-text {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 25px;
+        font-weight: 500;
       }
-/*       更改个人简介文字样式 */
-      .profile-text-exp {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin-top: 10px;
-        color: #333;
-        line-height: 1.6;
-        text-align: left;
+
+      /* --- 联系人列表容器 (核心技巧) --- */
+      /* 外层容器居中，内部使用 inline-block 包裹内容，实现视觉居中但左对齐 */
+      .contact-list-wrapper {
+        text-align: center; 
       }
-      .profile-text {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin-top: 10px;
-        color: #333;
-        line-height: 1.6;
+      
+      .contact-list {
+        display: inline-block; /* 宽度随内容自适应 */
+        text-align: left;      /* 内部文字左对齐 */
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #444;
+      }
+
+      /* 链接样式 */
+      .contact-item a {
+        color: #444;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .contact-item a:hover {
+        color: #0056b3; /* 悬停变蓝 */
+        text-decoration: underline;
+      }
+
+      /* 图标统一宽度，确保文字对齐 */
+      .contact-item i {
+        width: 30px;
         text-align: center;
+        margin-right: 15px;
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      /* --- 经历部分 (Experience) --- */
+      /* 保持简单整洁，放在列表下方 */
+      .experience-section {
+        margin-top: 30px;
+        text-align: left;
+        display: inline-block; /* 同样为了跟随上面的对齐方式 */
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        width: 100%; /* 这里可以让它稍微宽一点，或者跟随 contact-list */
+        max-width: 500px; /* 限制最大宽度以免太散 */
+      }
+      
+      .exp-item {
+        margin-bottom: 8px;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      /* --- 正文内容区 --- */
+      section.content {
+        margin-top: 40px;
+        text-align: left; /* 正文恢复左对齐 */
+      }
+
+      /* 移动端适配 */
+      @media (max-width: 600px) {
+        .wrapper { padding: 20px; }
+        .avatar-img { width: 120px; height: 120px; }
+        h1.name { font-size: 1.8rem; }
       }
     </style>
   </head>
@@ -108,59 +170,97 @@
   <body>
     <div class="page-container">
       <div class="wrapper">
+        
         <header>
           {% if site.avatar %}
-          <a class="image avatar">
-            <img src="{{ site.avatar }}" alt="avatar" />
-          </a>
-          {% endif %}
-          <!-- 以下文字居中 -->
-          <h1>{{ site.title }}</h1>
-      
-          {% if site.state %}
-          <p class="profile-text">{{ site.state }}</p>
-          {% endif %}
-      
-          {% if site.email %}
-          <p class="profile-text">{{ site.email }}</p>
-          {% endif %}
-      
-          {% if site.university %}
-          <p class="profile-text">{{ site.university }}</p>
-          {% endif %}
-          
-<!--           {% if site.location %}
-          <p class="profile-text">
-            &emsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;{{ site.location }}
-          </p>
-          {% endif %} -->
-          <!-- experience 不居中 -->
-          {% if site.experience %}
-            {% assign index = 0 %}
-            {% for item in site.experience %}
-              {% assign mod = index | modulo: 2 %}
-              {% if mod == 0 %}
-              <p class="profile-text-exp"">{{ item }}</p>
-              {% else %}
-              <p class="profile-text-exp"">&emsp;&emsp;{{ item }}</p>
-              {% endif %}
-              {% assign index = index | plus: 1 %}
-            {% endfor %}
+          <div class="avatar-container">
+            <a href="/">
+              <img src="{{ site.avatar }}" alt="Avatar" class="avatar-img" />
+            </a>
+          </div>
           {% endif %}
 
-          <br>
+          <h1 class="name">{{ site.title }}</h1>
+
+          {% if site.state %}
+          <div class="status-text">{{ site.state }}</div>
+          {% endif %}
+
+          <div class="contact-list-wrapper">
+            <div class="contact-list">
+              
+              {% if site.location %}
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{{ site.location }}</span>
+              </div>
+              {% endif %}
+
+              {% if site.university %}
+              <div class="contact-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>{{ site.university }}</span>
+              </div>
+              {% endif %}
+
+              {% if site.email %}
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+              </div>
+              {% endif %}
+
+              {% if site.researchgate %}
+              <div class="contact-item">
+                <i class="ai ai-researchgate"></i>
+                <a href="{{ site.researchgate }}" target="_blank">ResearchGate</a>
+              </div>
+              {% endif %}
+
+              {% if site.github_username %}
+              <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/{{ site.github_username }}" target="_blank">Github</a>
+              </div>
+              {% endif %}
+
+              {% if site.google_scholar %}
+              <div class="contact-item">
+                <i class="ai ai-google-scholar"></i>
+                <a href="{{ site.google_scholar }}" target="_blank">Google Scholar</a>
+              </div>
+              {% endif %}
+
+              {% if site.orcid %}
+              <div class="contact-item">
+                <i class="ai ai-orcid"></i>
+                <a href="{{ site.orcid }}" target="_blank">ORCID</a>
+              </div>
+              {% endif %}
+
+              {% if site.experience %}
+              <div class="experience-section">
+                {% for item in site.experience %}
+                  <div class="exp-item">{{ item }}</div>
+                {% endfor %}
+              </div>
+              {% endif %}
+              
+            </div>
+          </div>
         </header>
 
-        <section>
+        <section class="content">
           {{ content }}
-          <br>
+          
           {% if site.enable_footnote %}
-          <p></p>
+          <br><p style="font-size: small; color: #999;">Updated: {{ site.time | date: '%Y-%m-%d' }}</p>
           {% endif %}
         </section>
 
         <footer>
-        </footer>
+          </footer>
+
       </div>
     </div>
 
