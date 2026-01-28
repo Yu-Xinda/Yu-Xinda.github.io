@@ -26,7 +26,6 @@
     {% else %}
     <link rel="stylesheet" href="./assets/css/font.css">
     {% endif %}
-    
     {% if site.auto_dark_mode %}
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
@@ -37,240 +36,131 @@
 
     <style>
       body {
-        background-color: white; /* 页面整体背景保持白色 */
+        background-color: white;
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
-      /* 主布局容器：用于左右分栏 */
       .page-container {
         display: flex;
         justify-content: center;
-        padding: 40px 20px;
+        align-items: stretch;
+        background-color: white;
         min-height: 100vh;
-        box-sizing: border-box;
       }
-
-      .layout-grid {
-        display: flex;
-        flex-direction: row; /* 左右排列 */
-        max-width: 1200px;   /* 稍微加宽一点以容纳两栏 */
+/*    修改背景样式 */
+      .wrapper {
+        max-width: 960px;
         width: 100%;
-        gap: 40px;           /* 左右栏间距 */
-        align-items: flex-start; /* 顶部对齐 */
-      }
-
-      /* =======================================================
-         左侧：Sidebar (新修改部分 - 仿 Pei Zhang)
-         ======================================================= */
-      .sidebar {
-        flex: 0 0 280px; /* 左侧固定宽度 */
-        text-align: center;
-        padding-top: 20px;
-      }
-
-      /* 头像 */
-      .sidebar .avatar img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%; /* 圆形 */
-        object-fit: cover;
-        margin-bottom: 15px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-
-      /* 名字 */
-      .sidebar h1 {
-        font-size: 1.8em;
-        font-weight: 700;
-        color: #333;
-        margin: 10px 0 5px 0;
-      }
-
-      /* 状态 (Master student) */
-      .profile-state {
-        color: #666;
-        font-size: 1.1em;
-        margin-bottom: 25px;
-      }
-
-      /* 联系信息列表 (图标 + 文字) */
-      .contact-list {
-        display: inline-block; /* 让容器适应内容宽度 */
-        text-align: left;      /* 内部文字左对齐 */
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        font-size: 15px;
-        color: #444;
-      }
-      
-      .contact-item a {
-        color: #444;
-        text-decoration: none;
-      }
-      .contact-item a:hover {
-        color: #007bff;
-      }
-
-      /* 图标样式 */
-      .contact-item i {
-        width: 25px;
-        text-align: center;
-        margin-right: 10px;
-        color: #555;
-      }
-
-      /* 侧边栏底部的 Experience 列表 */
-      .sidebar-exp {
-        margin-top: 30px;
-        text-align: left;
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-        font-size: 0.9em;
-        color: #555;
-      }
-
-      /* =======================================================
-         右侧：Main Wrapper (完全保留您原始代码的样式)
-         ======================================================= */
-      .main-wrapper {
-        flex: 1; /* 占据剩余空间 */
-        
-        /* 以下样式直接取自您原来代码中的 .wrapper */
-        background-color: #e6f0ff; 
+/*         用图片当背景 */
+        /* background: url('{{ site.background.site }}') repeat; */
+/*         用纯色当背景 */
+        background-color:	#e6f0ff; 
         padding: 40px;
-        /* margin: 40px 0; */ /* 不需要 margin 了，由 flex gap 控制 */
+        margin: 40px 0;
         border-radius: 10px;
+/*         background-size:1000px 1000px */
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        
-        /* 背景图逻辑 */
-        background-repeat: no-repeat;
-        /* background-size: 1200px 1000px; */ /* 建议改为 cover 或 contain，或者保留原值 */
-        background-size: cover; 
-        background-position: center;
+        background-repeat: no-repeat; /* 防止重复 */
+        background-size: 1200px 1000px;/*根据内容和图片手动调整背景大小，前宽后高*/
+        background-position: center;  /* 居中 */
       }
 
-      /* 手机端适配：屏幕变窄时改为上下排列 */
-      @media (max-width: 850px) {
-        .layout-grid {
-          flex-direction: column;
-          align-items: center;
-        }
-        .sidebar {
-          width: 100%;
-          border-bottom: 1px solid #eee;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-        }
-        .main-wrapper {
-          width: 100%;
-          box-sizing: border-box;
-        }
+      .social-icons a {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px;
+      }
+
+      .social-icons i {
+        margin-right: 5px;
+      }
+
+      .social-icons p {
+        display: inline-block;
+        vertical-align: middle;
+      }
+/*       更改个人简介的图标样式 */
+      .profile-icon {
+        color: #000;
+        font-size: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+/*       更改个人简介文字样式 */
+      .profile-text-exp {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+        color: #333;
+        line-height: 1.6;
+        text-align: left;
+      }
+      .profile-text {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+        color: #333;
+        line-height: 1.6;
+        text-align: center;
       }
     </style>
   </head>
 
   <body>
     <div class="page-container">
-      <div class="layout-grid">
-        
-        <aside class="sidebar">
-          
+      <div class="wrapper">
+        <header>
           {% if site.avatar %}
-          <div class="avatar">
+          <a class="image avatar">
             <img src="{{ site.avatar }}" alt="avatar" />
-          </div>
+          </a>
           {% endif %}
-
+          <!-- 以下文字居中 -->
           <h1>{{ site.title }}</h1>
       
           {% if site.state %}
-          <div class="profile-state">{{ site.state }}</div>
+          <p class="profile-text">{{ site.state }}</p>
           {% endif %}
       
-          <div class="contact-list">
-            
-            {% if site.location %}
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>{{ site.location }}</span>
-            </div>
-            {% endif %}
-
-            {% if site.email %}
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-            </div>
-            {% endif %}
-
-            {% if site.university %}
-            <div class="contact-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span>{{ site.university }}</span>
-            </div>
-            {% endif %}
-
-            {% if site.researchgate %}
-            <div class="contact-item">
-              <i class="ai ai-researchgate"></i>
-              <a href="{{ site.researchgate }}">ResearchGate</a>
-            </div>
-            {% endif %}
-
-            {% if site.github_username %}
-            <div class="contact-item">
-              <i class="fab fa-github"></i>
-              <a href="https://github.com/{{ site.github_username }}">Github</a>
-            </div>
-            {% endif %}
-
-            {% if site.google_scholar %}
-            <div class="contact-item">
-              <i class="ai ai-google-scholar"></i>
-              <a href="{{ site.google_scholar }}">Google Scholar</a>
-            </div>
-            {% endif %}
-
-            {% if site.orcid %}
-            <div class="contact-item">
-              <i class="ai ai-orcid"></i>
-              <a href="{{ site.orcid }}">ORCID</a>
-            </div>
-            {% endif %}
-          </div>
-
+          {% if site.email %}
+          <p class="profile-text">{{ site.email }}</p>
+          {% endif %}
+      
+          {% if site.university %}
+          <p class="profile-text">{{ site.university }}</p>
+          {% endif %}
+          
+<!--           {% if site.location %}
+          <p class="profile-text">
+            &emsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;{{ site.location }}
+          </p>
+          {% endif %} -->
+          <!-- experience 不居中 -->
           {% if site.experience %}
-          <div class="sidebar-exp">
+            {% assign index = 0 %}
             {% for item in site.experience %}
-              <div style="margin-bottom: 5px;">{{ item }}</div>
+              {% assign mod = index | modulo: 2 %}
+              {% if mod == 0 %}
+              <p class="profile-text-exp"">{{ item }}</p>
+              {% else %}
+              <p class="profile-text-exp"">&emsp;&emsp;{{ item }}</p>
+              {% endif %}
+              {% assign index = index | plus: 1 %}
             {% endfor %}
-          </div>
           {% endif %}
 
-        </aside>
+          <br>
+        </header>
 
-        <main class="main-wrapper" 
-              style="{% if site.background.site %}background-image: url('{{ site.background.site }}');{% endif %}">
-          
-          <section>
-            {{ content }}
-            
-            <br>
-            {% if site.enable_footnote %}
-            <p></p>
-            {% endif %}
-          </section>
+        <section>
+          {{ content }}
+          <br>
+          {% if site.enable_footnote %}
+          <p></p>
+          {% endif %}
+        </section>
 
-          <footer>
-          </footer>
-        </main>
-
+        <footer>
+        </footer>
       </div>
     </div>
 
