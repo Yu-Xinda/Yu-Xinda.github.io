@@ -3,7 +3,7 @@ title: Yu Xinda
 state: Master student
 email: yuxindaaaaa@gmail.com
 university: Huzhou University
-avatar: ./assets/img/your-photo.jpg # 确保路径正确
+avatar: ./assets/img/avatar.jpg # 确保路径正确
 
 # --- 新增以下字段以启用带图标的链接 ---
 location: Zhejiang, China  # 如果需要显示地点
