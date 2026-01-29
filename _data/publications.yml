@@ -1,7 +1,7 @@
 main:
   - title: "Deep Learning for Image Super-Resolution"
     venue: "CVPR"
-    image: ../_publication/image/teaser_example.png
+    image: /_publication/image/teaser_example.png
     authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan L. Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou⋆
     conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
     abstract: >
@@ -13,7 +13,7 @@ main:
         booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
         year={2025}
       }
-    pdf: ../_publication//file/curriculum_vitae.pdf
+    pdf: /_publication/file/curriculum_vitae.pdf
     code: https://github.com/MrGiovanni/ContinualLearning
     
   - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
