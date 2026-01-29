@@ -1,24 +1,21 @@
-- year: 2025
-  date: "4/11, 25 10:00 AM – 1:00 PM"
-  location: "Zhejiang HuZhou"
-  title: "被湖州师范学院录取为硕士研究生！"
-  description: "已被录取为湖州师范学院计算机科学与技术研究生，希望能在新的环境中多多学习新知识，突破自我！"
-  image: ""
-  highlight: ""
+# - year: 2025
+#   date: "4/11, 25 10:00 AM – 1:00 PM"
+#   location: "Zhejiang HuZhou"
+#   title: "被湖州师范学院录取为硕士研究生！"
+#   description: "已被录取为湖州师范学院计算机科学与技术研究生，希望能在新的环境中多多学习新知识，突破自我！"
+#   image: ""
+#   highlight: ""
 
-- year: 2025
-  date: "MM/DD, 25 XX:XX AM – XX:XX PM"
-  location: "Location"
-  title: "第二条活动标题示例"
+# - year: 2025
+#   date: "MM/DD, 25 XX:XX AM – XX:XX PM"
+#   location: "Location"
+#   title: "第二条活动标题示例"
+#   description: "这是第二条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
+#   image: "./image/academics-activity.png"
+#   highlight: ""
+
+- time: 2024
+  description: "这是第一条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
+- time: 2024
   description: "这是第二条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
-  image: "./image/academics-activity.png"
-  highlight: ""
-
-- year: 2024
-  date: "MM/DD, 24 XX:XX PM – XX:XX PM"
-  location: "Location"
-  title: "第三条活动标题示例"
-  description: "这是第三条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
-  image: ""
-  highlight: "强调内容示例"
 
