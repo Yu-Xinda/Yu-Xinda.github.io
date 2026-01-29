@@ -1,3 +1,7 @@
+---
+layout: default
+title: Publications
+---
 <h2 style="margin: 2px 0px -10px;">
   <a href="./_publication/publication.html" style="text-decoration: none; color: inherit;">Publications</a>
 </h2>
