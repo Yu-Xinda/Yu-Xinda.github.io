@@ -14,8 +14,8 @@
 #   image: "./image/academics-activity.png"
 #   highlight: ""
 
-- time: 2024
+- time: 2024.05
   description: "这是第一条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
-- time: 2024
+- time: 2024.06
   description: "这是第二条活动的描述内容。可以替换为你的实际信息，也可以继续添加 highlight 强调内容。"
 
