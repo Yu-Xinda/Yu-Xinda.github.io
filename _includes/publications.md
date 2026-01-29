@@ -36,12 +36,12 @@
   <!-- 按钮区域 -->
   <div class="links" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
     {% if link.abstract %}
-    <button onclick="toggleContent(this, 'abstract')" style="font-size: 14px; padding: 3px 8px; background-color: #0056b3; color: white; border: none; border-radius: 3px; cursor: pointer;">
+    <button onclick="toggleContent(this, 'abstract')" style="font-size: 12px; padding: 3px 8px; background-color: #0056b3; color: white; border: none; border-radius: 3px; cursor: pointer;">
       Abstract
     </button>
     {% endif %}
     {% if link.bibtex %}
-    <button onclick="toggleContent(this, 'bibtex')" style="font-size: 14px; padding: 3px 8px; background-color: #0056b3; color: white; border: none; border-radius: 3px; cursor: pointer;">
+    <button onclick="toggleContent(this, 'bibtex')" style="font-size: 12px; padding: 3px 8px; background-color: #0056b3; color: white; border: none; border-radius: 3px; cursor: pointer;">
       BibTex
     </button>
     {% endif %}
