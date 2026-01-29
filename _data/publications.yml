@@ -31,5 +31,5 @@ main:
         pages={12245--12254},
         year={2020}
       }
-    pdf: ./_publication/curriculum_vitae.pdf
+    pdf: /_publication/curriculum_vitae.pdf
     code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
