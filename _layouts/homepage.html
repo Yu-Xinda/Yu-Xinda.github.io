@@ -211,6 +211,13 @@
             <span class="profile-link-text">ORCID</span>
           </a>
           {% endif %}
+        <!-- 微信链接 -->
+          {% if site.wechat_qrcode %}
+          <a href="{{ site.wechat_qrcode }}" target="_blank" class="profile-link">
+            <i class="fab fa-weixin profile-icon"></i>
+            <span class="profile-link-text">WeChat</span>
+          </a>
+          {% endif %}
           
           <!-- experience 不居中 -->
           <!-- {% if site.experience %}
