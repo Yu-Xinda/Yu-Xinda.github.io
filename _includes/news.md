@@ -1,18 +1,91 @@
-<h2 style="margin: 2px 0px -10px;">
-  <a href="./_news/news.html" style="text-decoration: none; color: inherit;">News</a>
-</h2>
-<br>
-<div style="font-size: 16px; line-height: 1.6; letter-spacing: 0.5px; text-align: justify;">
-<!--   以下为内容添加 ，若想添加新内容请按照以下格式添加-->
-  <p>
-    - 2025.05：I was admitted to Huzhou University as a master's student！！
-  </p>
-<!--<p>
-    - 新内容添加
-  </p> -->
-  <p style="font-size: 16px; text-align: center; margin-bottom: 0px;">
-    <a href="./_news/news.html" style="text-decoration: underline; color: #888;">
-      - 🔺 more -
-    </a>
-  </p>
-</div>
+---
+layout: null
+title: News!
+---
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>News!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    body {
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 20px 0 0 40px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #0056b3;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
+    h1.page-title {
+      font-size: 36px;
+      color: #222;
+      margin-bottom: 30px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-item {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+      color: #333;
+    }
+    .news-time {
+      color: #d9534f;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    .news-description {
+      color: #333;
+    }
+    .news-tag {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #666;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      margin-left: 8px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <!-- 返回按钮 -->
+  <a href="javascript:history.back()" class="back-button">
+    <i class="fas fa-arrow-left"></i> Back
+  </a>
+
+  <div class="container">
+    <h1 class="page-title">News</h1>
+    
+  <ul class="news-list">
+    {% for item in site.data.news %}
+    <li class="news-item">
+      <span class="news-time">[{{ item.time }}]</span>
+      <span class="news-description">{{ item.description }}</span>
+      {% if item.tag %}
+      <span class="news-tag">{{ item.tag }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
+</body>
+</html>
