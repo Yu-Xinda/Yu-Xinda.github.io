@@ -9,10 +9,4 @@
     - <span style="color: #d9534f; font-weight: bold;">{{ item.time }}</span>: {{ item.description }}
   </p>
   {% endfor %}
-  
-  <p style="font-size: 16px; text-align: center; margin-bottom: 0px;">
-    <a href="./_news/news.html" style="text-decoration: underline; color: #888;">
-      - 🔺 more -
-    </a>
-  </p>
 </div>
