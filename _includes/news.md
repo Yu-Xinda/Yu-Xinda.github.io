@@ -6,7 +6,7 @@
   <!-- 动态加载新闻内容 -->
   {% for item in site.data.news limit:5 %}
   <p>
-    - <span style="color: #d9534f; font-weight: bold;">{{ item.time }}</span>: {{ item.description }}
+    <span style="color: #000;">[</span><strong style="color: #d9534f; font-weight: 900;">{{ item.time }}</strong><span style="color: #000;">]</span> {{ item.description }}
   </p>
   {% endfor %}
 </div>
