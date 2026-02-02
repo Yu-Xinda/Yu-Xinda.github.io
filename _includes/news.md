@@ -6,7 +6,7 @@
   <!-- 动态加载新闻内容 -->
   {% for item in site.data.news limit:5 %}
   <p>
-    <span style="color: #000;font-weight: 1000;">[</span><span style="color: #d9534f; font-weight: 700; font-family: 'Arial Black', 'Microsoft YaHei', sans-serif;">{{ item.time }}</span><span style="color: #000;">]</span> {{ item.description }}
+    <span style="color: #000;font-weight: 1000;">[</span><span style="color: #d9534f; font-weight: 700; font-family: 'Times New Roman', Times, serif;">{{ item.time }}</span><span style="color: #000;">]</span> {{ item.description }}
   </p>
   {% endfor %}
 </div>
