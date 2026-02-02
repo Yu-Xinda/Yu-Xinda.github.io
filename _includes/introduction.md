@@ -2,7 +2,7 @@
    <a href="./about.html" style="text-decoration: none; color: inherit;">About me</a>
 </h2> -->
 <br>
-<div style="font-size: 18px; line-height: 1.6; text-align: justify;">
+<div style="font-size: 18px; line-height: 1.6; text-align: justify; color: #000000; background-color: #ffffff;">
 <!--   以下添加文本内容 -->
   <p>
     Hello! I’m Xinda Yu, currently a graduate student at Huzhou University.
