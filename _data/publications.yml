@@ -2,8 +2,8 @@ main:
   - title: "Deep Learning for Image Super-Resolution"
     venue: "CVPR"
     image: /_publication/image/teaser_example.png
-    authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan L. Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou⋆
-    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
+    authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan L. Yuille, Yaoyao Liu*, Zongwei Zhou⋆
+    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2023.
     abstract: >
       The ability to dynamically extend a model to new data and classes is critical for multiple organ and tumor segmentation. However, due to privacy regulations, accessing previous data and annotations can be problematic in the medical domain. This poses a significant barrier to preserving the high segmentation accuracy of the old classes when learning from new classes because of the catastrophic forgetting problem. In this paper, we first empirically demonstrate that simply using high-quality pseudo labels can fairly mitigate this problem in the setting of organ segmentation. Furthermore, we put forward an innovative architecture designed specifically for continuous organ and tumor segmentation, which incurs minimal computational overhead.
     bibtex: |
@@ -19,8 +19,8 @@ main:
   - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
     venue: "CVPR"
     image: /_publication/image/teaser_example_2.png 
-    authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-    conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
+    authors: Yaoyao Liu*, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
+    conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
     abstract: >
       Mnemonics Training presents a novel approach to multi-class incremental learning that effectively prevents catastrophic forgetting. This method enables neural networks to continuously learn new classes while maintaining performance on previously learned classes.
     bibtex: |
