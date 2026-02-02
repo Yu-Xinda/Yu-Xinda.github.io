@@ -4,7 +4,7 @@
 <br>
 <div style="font-size: 16px; line-height: 1.6; letter-spacing: 0.5px; text-align: justify;">
 <!--   以下添加文本内容 -->
-  <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px; color: #000000; background-color: #ffffff;">
+  <ul style="list-style-type: disc; padding-left: 20px; margin-top: 5px; color: #000000; background-color: #ffffff;font-family: 'Times New Roman', Times, serif;">
     <li>Reviewer for TPAMI, TKDE, JAIR, TNNLS, TBD, ACM TOMM, Neurocomputing, DSP</li>
     <li>Reviewer for ICML25, NeurIPS24/25, ICLR25, ACL25, KDD25, AITATS25-26, IJCAI25, ACM MM23-25, AAAI23-25, PRCV22</li>
     <li>Student member for IEEE, CSIG, CCF</li>
