@@ -23,15 +23,15 @@
   
   <!-- 右侧内容区域 -->
   <div class="col-sm-9" style="flex: 1;">
-    <div class="title" style="font-weight: 600; font-size: 19px; color: #000000;">
+    <div class="title" style="font-weight: 600; font-size: 19px; color: #000000;font-family: 'Times New Roman', Times, serif;">
       {% if link.pdf %}
       <a href="{{ link.pdf }}" style="color: #3498db; text-decoration: none;">{{ link.title }}</a>
       {% else %}
       {{ link.title }}
       {% endif %}
     </div>
-    <div class="author" style="margin-top: 8px; font-size: 14px; color: #000000;">{{ link.authors }}</div>
-    <div class="periodical" style="margin-top: 6px; font-style: italic; font-size: 14px; color: #000000;">{{ link.conference }}</div>
+    <div class="author" style="margin-top: 8px; font-size: 14px; color: #000000;font-family: 'Times New Roman', Times, serif;">{{ link.authors }}</div>
+    <div class="periodical" style="margin-top: 6px; font-style: italic; font-size: 14px; color: #000000;font-family: 'Times New Roman', Times, serif;">{{ link.conference }}</div>
     
   <!-- 按钮区域 -->
   <div class="links" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
@@ -55,14 +55,14 @@
   
   <!-- Abstract 内容（默认隐藏） -->
   {% if link.abstract %}
-  <div class="abstract-content" style="display: none; margin-top: 10px; margin-right: 15px; background: #eef3f7; padding: 8px 10px; border-radius: 4px; font-size: 14px; line-height: 1.4; text-align: justify; color: #000000;">
+  <div class="abstract-content" style="display: none; margin-top: 10px; margin-right: 15px; background: #eef3f7; padding: 8px 10px; border-radius: 4px; font-size: 14px; line-height: 1.4; text-align: justify; color: #000000;font-family: 'Times New Roman', Times, serif;">
     {{ link.abstract }}
   </div>
   {% endif %}
   
   <!-- BibTex 内容（默认隐藏） -->
   {% if link.bibtex %}
-  <pre class="bibtex-content" style="display: none; margin-top: 5px; margin-right: 15px; background: #eef3f7; padding: 8px 10px; border-radius: 4px; font-size: 14px; line-height: 1.4; white-space: pre-wrap;">{{ link.bibtex }}</pre>
+  <pre class="bibtex-content" style="display: none; margin-top: 5px; margin-right: 15px; background: #eef3f7; padding: 8px 10px; border-radius: 4px; font-size: 14px; line-height: 1.4; white-space: pre-wrap;font-family: 'Times New Roman', Times, serif;">{{ link.bibtex }}</pre>
   {% endif %}
   </div>
 </div>
