@@ -23,7 +23,7 @@
   
   <!-- 右侧内容区域 -->
   <div class="col-sm-9" style="flex: 1;">
-    <div class="title" style="font-weight: 600; font-size: 19px;  color: #000000; background-color: #ffffff;">
+    <div class="title" style="font-weight: 600; font-size: 19px; color: #000000; background-color: #ffffff;">
       {% if link.pdf %}
       <a href="{{ link.pdf }}" style="color: #3498db; text-decoration: none;">{{ link.title }}</a>
       {% else %}
